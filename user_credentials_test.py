@@ -24,3 +24,17 @@ class TestCredentials(unittest.TestCase):
 		self.new_user.save_user()
 		user2 = User('Oduor','Od\'uo\'r','28750d')
 		user2.save_user()
+
+		for user in User.users_list:
+			if user.first_name == user2.first_name and user.password == user2.password:
+				current_user = user.first_name
+		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+		return current_user
+
+		
+
+def setUp(self):
+		'''
+		
+		'''
+		self.new_credential = Credential('Dancan','Facebook','Dancanoduor','28750d')
