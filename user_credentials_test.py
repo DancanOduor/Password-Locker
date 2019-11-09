@@ -17,7 +17,7 @@ def test_save_user(self):
 		self.assertEqual(len(User.users_list),1)
 
 class TestCredentials(unittest.TestCase):
-	
+
 		self.new_user = User('Dancan','Od\'uo\'r','28750')
 		self.new_user.save_user()
 		user2 = User('Oduor','Od\'uo\'r','28750d')
@@ -60,3 +60,10 @@ def test_display_credentials(self):
 		gmail = Credential('Dancan','Gmail','dancanoduor','28750187')
 		gmail.save_credentials()
 		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
+
+def test_find_by_site_name(self):
+		self.new_credential.save_credentials()
+		twitter = Credential('Dancan','Twitter','dancanoduor','28750187')
+		twitter.save_credentials()
+		credential_exists = Credential.find_by_site_name('Twitter')
+		self.assertEqual(credential_exists,twitter)
