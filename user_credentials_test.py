@@ -17,4 +17,10 @@ def test_save_user(self):
 		self.assertEqual(len(User.users_list),1)
 
 class TestCredentials(unittest.TestCase):
-	
+		'''
+		Function to test whether the login in function check_user works as expected
+		'''
+		self.new_user = User('Dancan','Od\'uo\'r','28750')
+		self.new_user.save_user()
+		user2 = User('Oduor','Od\'uo\'r','28750d')
+		user2.save_user()
