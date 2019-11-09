@@ -44,3 +44,9 @@ def test__init__(self):
 		self.assertEqual(self.new_credential.site_name,'Facebook')
 		self.assertEqual(self.new_credential.account_name,'dancanoduor')
 		self.assertEqual(self.new_credential.password,'28750187')
+
+def test_save_credentials(self):
+		self.new_credential.save_credentials()
+		twitter = Credential('Dancan','Twitter','dancanoduor','28750187')
+		twitter.save_credentials()
+		self.assertEqual(len(Credential.credentials_list),2)
