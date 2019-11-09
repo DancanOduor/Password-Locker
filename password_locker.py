@@ -16,3 +16,10 @@ def verify_user(first_name,password):
 def generate_password(self):
 	gen_pass = Credential.generate_password(self)
 	return gen_pass
+
+def create_credential(user_name,site_name,account_name,password):
+	new_credential=Credential(user_name,site_name,account_name,password)
+	return new_credential
+
+def save_credential(credential):
+	Credential.save_credentials(credential)
