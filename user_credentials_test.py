@@ -38,3 +38,9 @@ def setUp(self):
 		
 		'''
 		self.new_credential = Credential('Dancan','Facebook','Dancanoduor','28750d')
+
+def test__init__(self):
+		self.assertEqual(self.new_credential.user_name,'Dancan')
+		self.assertEqual(self.new_credential.site_name,'Facebook')
+		self.assertEqual(self.new_credential.account_name,'dancanoduor')
+		self.assertEqual(self.new_credential.password,'28750187')
