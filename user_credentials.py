@@ -50,3 +50,10 @@ class Credential:
 		return gen_pass
 
 	@classmethod
+	def display_credentials(cls,user_name):
+		user_credentials_list = []
+		for credential in cls.credentials_list:
+			if credential.user_name == user_name:
+				user_credentials_list.append(credential)
+		return user_credentials_list
+				
