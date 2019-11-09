@@ -67,3 +67,18 @@ def test_find_by_site_name(self):
 		twitter.save_credentials()
 		credential_exists = Credential.find_by_site_name('Twitter')
 		self.assertEqual(credential_exists,twitter)
+
+def test_copy_credential(self):
+		self.new_credential.save_credentials()
+		twitter = Credential('Dancan','Twitter','dancanoduor','28750187')
+		twitter.save_credentials()
+		find_credential = None
+		for credential in Credential.user_credentials_list:
+				find_credential =Credential.find_by_site_name(credential.site_name)
+				return pyperclip.copy(find_credential.password)
+		Credential.copy_credential(self.new_credential.site_name)
+		self.assertEqual('28750187',pyperclip.paste())
+		print(pyperclip.paste())
+
+if __name__ == '__main__':
+	unittest.main(verbosity=2)
