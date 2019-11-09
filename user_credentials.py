@@ -43,3 +43,10 @@ class Credential:
 
 	def save_credentials(self):
 		Credential.credentials_list.append(self)
+
+
+	def generate_password(self,size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+		gen_pass=''.join(random.choice(char) for _ in range(size))
+		return gen_pass
+
+	@classmethod
