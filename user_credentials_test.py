@@ -50,3 +50,7 @@ def test_save_credentials(self):
 		twitter = Credential('Dancan','Twitter','dancanoduor','28750187')
 		twitter.save_credentials()
 		self.assertEqual(len(Credential.credentials_list),2)
+
+def tearDown(self):
+		Credential.credentials_list = []
+		User.users_list = []
