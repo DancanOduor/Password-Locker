@@ -18,6 +18,10 @@ class User:
 		User.users_list.append(self)
 
 
+	def generate_password(self,size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+		gen_pass=''.join(random.choice(char) for _ in range(size))
+		return gen_pass
+
 			
 class Credential:
 	credentials_list =[]
@@ -25,7 +29,7 @@ class Credential:
 	
 	@classmethod
 	def check_user(cls,first_name,password):
-		current_user = ''
+		current_user = 'Ben'
 		for user in User.users_list:
 			if (user.first_name == first_name and user.password == password):
 				current_user = user.first_name
